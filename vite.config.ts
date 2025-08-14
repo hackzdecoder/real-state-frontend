@@ -6,11 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://real-state-backend-kewm.onrender.com',
+      '/api': 'https://real-state-backend-kewm.onrender.com',  // Proxy all /api requests to backend port 5000
     },
-  },
-  build: {
-    outDir: 'dist',
   },
 });
 
