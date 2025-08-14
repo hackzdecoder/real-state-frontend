@@ -31,7 +31,7 @@ const useEndpoint = <TData = unknown, TRequestBody = unknown>({
     const execute = async (
         overrideUrl?: string,
         overrideBody?: TRequestBody,
-        overrideMethod?: HttpMethod
+        overrideMethod?: HttpMethod 
     ) => {
         setIsLoading(true);
         setError(null);
