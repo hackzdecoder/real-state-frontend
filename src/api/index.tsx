@@ -15,7 +15,7 @@ export interface EndpointResponse<TData, TRequestBody = unknown> {
     execute: (
         overrideUrl?: string,
         overrideBody?: TRequestBody,
-        overrideMethod?: HttpMethod // <-- add this
+        overrideMethod?: HttpMethod
     ) => Promise<void>;
 }
 
@@ -45,8 +45,8 @@ const useEndpoint = <TData = unknown, TRequestBody = unknown>({
             if (token) headers.Authorization = `Bearer ${token}`;
 
             const apiUrl = import.meta.env.DEV
-                ? `https://real-state-backend-kewm.onrender.com${overrideUrl ?? url}`
-                : overrideUrl ?? url;
+            ? `/api${overrideUrl ?? url}`  // local dev uses Vite proxy
+            : `https://real-state-backend-kewm.onrender.com${overrideUrl ?? url}`;  // production
 
             const res = await fetch(apiUrl, {
                 method: overrideMethod ?? method,
