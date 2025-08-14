@@ -75,7 +75,7 @@ ________________________________________
 ________________________________________
 3. Git Clone and Push Procedure
 1.	Open a terminal in the project root.
-2.	Clone the repository using: git clone https://github.com/hackzdecoder/real-state.git
+2.	Clone the repository using: https://github.com/hackzdecoder/real-state-frontend.git & : https://github.com/hackzdecoder/real-state-backend.git 
 3.	Navigate to the project folder.
 4.	After making changes, stage files using: git add .
 5.	Commit changes with a message: git commit -m "Your descriptive commit message"
