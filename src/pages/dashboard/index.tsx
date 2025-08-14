@@ -603,11 +603,16 @@ const Index = ({
                     >
                         <Button
                             type="submit"
-                            startIcon={<SaveIcon />}
+                            startIcon={saveListingEndpoint.isLoading ? <CircularProgress size={20} color="inherit" /> : <SaveIcon />}
                             variant="contained"
-                            sx={{ backgroundColor: primaryColor, color: '#fff', '&:hover': { backgroundColor: primaryDark } }}
+                            sx={{
+                                backgroundColor: primaryColor,
+                                color: '#fff',
+                                '&:hover': { backgroundColor: primaryDark },
+                            }}
+                            disabled={saveListingEndpoint.isLoading} // prevent double submit
                         >
-                            {editMode ? 'Update' : 'Save'}
+                            {saveListingEndpoint.isLoading ? (editMode ? 'Updating...' : 'Saving...') : editMode ? 'Update' : 'Save'}
                         </Button>
                         <Button
                             type="button"
